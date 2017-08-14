@@ -31,6 +31,11 @@ class PostController extends Controller
         return $this->render('blog/index.html.twig',array('posts' => $posts));
     }
     
+    /**
+     * @Route("/secure/post/list", name="list_posts")
+     * @Security("is_granted('ROLE_USER')")
+     */     
+    
     public function listAction()
     {
         
@@ -47,6 +52,11 @@ class PostController extends Controller
         
         return $this->render('blog/listaEntrada.html.twig',array('posts' => $posts));
     }
+    
+    /**
+     * @Route("/post/delete/{post}", name="delete_post")
+     * @Security("is_granted('ROLE_USER')")
+     */     
     
     public function deleteAction(Request $request, $post)
     {
@@ -140,10 +150,15 @@ class PostController extends Controller
             }
         }
         return $this->render(
-            'Blog/crearEntrada.html.twig',
+            'blog/crearEntrada.html.twig',
             array('form' => $form->createView())
         );
     }
+    
+    /**
+     * @Route("/secure/post/edit/{post}", name="edit_post")
+     * @Security("is_granted('ROLE_USER')")
+     */     
 
     public function editAction(Request $request,$post){
         
@@ -202,7 +217,7 @@ class PostController extends Controller
             $em->flush();
   
             //Mensaje flash
-            $session->getFlashBag()->add('info', '¡Enhorabuena! Has editado el post correctamente');
+            $session->getFlashBag()->add('info', '¡Registro actualizado con éxito!');
             
             //Redirigir a la home
             return $this->redirect($this->generateURL('list_posts'));
@@ -217,7 +232,7 @@ class PostController extends Controller
         
         //Renderizar vista
         return $this->render(
-            'Blog/editarPost.html.twig',
+            'blog/editarPost.html.twig',
             array('form' => $form->createView())
         );
     }

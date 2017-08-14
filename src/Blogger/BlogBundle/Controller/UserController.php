@@ -20,6 +20,11 @@ use Blogger\BlogBundle\Form\UserEditType;
  */
 class UserController extends Controller {
     
+    /**
+     * @Route("/secure/user/list", name="list_users")
+     * @Security("is_granted('ROLE_USER')")
+     */    
+    
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -34,6 +39,11 @@ class UserController extends Controller {
         
         return $this->render('blog/listaUsuarios.html.twig',array('users' => $users));
     }
+    
+    /**
+     * @Route("/secure/user/edit/{user}", name="edit_user")
+     * @Security("is_granted('ROLE_USER')")
+     */    
     
     public function editAction(Request $request,$user){
         
@@ -96,6 +106,11 @@ class UserController extends Controller {
             array('form' => $form->createView())
         );
     }
+    
+    /**
+     * @Route("/secure/user/delete/{user}", name="delete_user")
+     * @Security("is_granted('ROLE_USER')")
+     */    
     
     public function deleteAction(Request $request, $user){
         
