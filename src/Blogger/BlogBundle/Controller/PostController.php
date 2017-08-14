@@ -20,7 +20,7 @@ class PostController extends Controller
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
 
-        $qb->select(array('a.id, a.title, a.content, a.createdAt, u.username, u.email'))
+        $qb->select(array('a.id, a.title, a.content, a.createdAt, a.description, a.keyWords, u.username, u.email'))
            ->from('BloggerBlogBundle:BlogPost', 'a')
            ->innerJoin('BloggerBlogBundle:User','u')
            ->where('a.createdBy = u.id');

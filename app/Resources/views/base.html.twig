@@ -2,6 +2,9 @@
 <!DOCTYPE html>
     <html>
         <head>
+        
+        <meta name="keywords" content="{% for post in posts %}{{ post.keyWords }}{% endfor %}">
+        <meta name="description" content="{% for post in posts %}{{ post.description }}{% endfor %}">        
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Blog{% endblock %}</title>
         {% block stylesheets %}
