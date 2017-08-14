@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/blog/app/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Entity/Roles.php</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Controller/RegistrationController.php</file>
+            <file>file:/C:/xampp/htdocs/blog/app/config/services.yml</file>
+            <file>file:/C:/xampp/htdocs/blog/app/config/parameters.yml</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/baseSecure.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Entity/newfile</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Repository/UserRepository.php</file>
+            <file>file:/C:/xampp/htdocs/blog/app/config/security.yml</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/Blog/login.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Controller/PostController.php</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/Blog/secure.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Form/UserType.php</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/Blog/register.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/Blog/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/app/AppKernel.php</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Entity/BlogComment.php</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Entity/BlogPost.php</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Controller/SecurityController.php</file>
+            <file>file:/C:/xampp/htdocs/blog/src/Blogger/BlogBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/blog/app/Resources/views/Blog/registro.html.twig</file>
+            <file>file:/C:/xampp/htdocs/blog/composer.json</file>
+        </group>
+    </open-files>
+</project-private>

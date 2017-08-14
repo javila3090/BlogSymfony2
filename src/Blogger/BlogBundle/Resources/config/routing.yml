@@ -1,0 +1,57 @@
+blogger_blog_homepage:
+    path:     /
+    defaults: { _controller: BloggerBlogBundle:Post:index }
+    
+registro_form:
+    pattern:  /registro
+    defaults: { _controller: BloggerBlogBundle:Security:register }
+    
+forget_password:
+    pattern:  /forget_password
+    defaults: { _controller: BloggerBlogBundle:Default:resetPass }
+    
+send_email:
+    pattern:  /send_email
+    defaults: { _controller: BloggerBlogBundle:Default:sendEmail }
+
+admin:
+  pattern: /admin
+  defaults: { _controller: BloggerBlogBundle:Security:login }
+
+login_check:
+   pattern: /login_check
+ 
+logout:
+  pattern: /logout
+  
+secure:
+  pattern: /secure
+  defaults: { _controller: BloggerBlogBundle:Security:secure }
+
+registro_blog:
+  pattern: /secure/post/crear
+  defaults: { _controller: BloggerBlogBundle:Post:newPost }
+
+list_posts:
+  pattern: /secure/post/list
+  defaults: { _controller: BloggerBlogBundle:Post:list }
+
+edit_post:
+  pattern: /secure/post/edit/{post}
+  defaults: { _controller: BloggerBlogBundle:Post:edit }
+  
+delete_post:
+  pattern: /post/delete/{post}
+  defaults: { _controller: BloggerBlogBundle:Post:delete }    
+
+list_users:
+  pattern: /secure/user/list
+  defaults: { _controller: BloggerBlogBundle:User:index }
+  
+edit_user:
+  pattern: /secure/user/edit/{user}
+  defaults: { _controller: BloggerBlogBundle:User:edit }
+  
+delete_user:
+  pattern: /secure/user/delete/{user}
+  defaults: { _controller: BloggerBlogBundle:User:delete }
