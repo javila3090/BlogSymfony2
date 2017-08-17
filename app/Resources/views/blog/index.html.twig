@@ -9,9 +9,13 @@
                 <h1>{{ post.title }}</h1>
                 <p>Por: {{ post.username }} </p>
                 <p>Publicado: {{ post.createdAt|date('d-m-Y H:m:s') }}</p>
+                <p>Categoría: {{ post.category }}</p>
                 <hr style="border-width: 3px;">
                 <p>{{ post.content }}</p>
                 <br>
+                <span class="tag label label-info">
+                    <span>{{ post.keyWords }}</span>                 
+                </span>                
                 <hr style="border-width: 3px;">
             {% endfor %}
         </div>

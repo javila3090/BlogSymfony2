@@ -19,6 +19,8 @@ class SecurityController extends Controller
     public function loginAction(Request $request)
     {
         $session = $request->getSession();
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();        
  
         // get the login error if there is one
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
@@ -29,12 +31,23 @@ class SecurityController extends Controller
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
+
+        $qb->select(array("a.description, a.keyWords"))
+           ->from('BloggerBlogBundle:BlogPost', 'a')
+           ->innerJoin('BloggerBlogBundle:User','u','WITH', 'a.createdBy = u.id')
+           ->innerJoin('BloggerBlogBundle:BlogCategory','c') 
+           ->where('a.id_category = c.id'); 
+
+        $query = $qb->getQuery();
+        $posts = $query->getResult();
+        
         return $this->render(
             'Blog/login.html.twig',
             array(                
                 // last username entered by the user
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
                 'error'         => $error,
+                'posts'         => $posts,
             )
         );
     }    
