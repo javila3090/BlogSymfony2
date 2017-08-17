@@ -8,6 +8,7 @@ Detalles técnicos:
 -. Area de administración:
 
   -- Creación y edición de publicaciones
+
   -- Administración de usuarios del sistema
   
   Lenguaje: PHP + Symfony 2.8
