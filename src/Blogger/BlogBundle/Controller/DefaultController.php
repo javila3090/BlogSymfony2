@@ -19,8 +19,7 @@ class DefaultController extends Controller
         
         $email=$this->get('request')->request->get('email');
         
-        //Check if Email exist
-        
+        //Check if Email exist 
         $emailExists = $this->getDoctrine()
                 ->getRepository('BloggerBlogBundle:User')
                 ->findOneBy(array('email' => $email));
