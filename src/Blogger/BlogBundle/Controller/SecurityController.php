@@ -92,7 +92,7 @@ class SecurityController extends Controller
         
             if ($form->isValid()) {
                 try{
-                    $em = $this->getDoctrine()->getManager();lo
+                    $em = $this->getDoctrine()->getManager();
                     $em->persist($user);
                     $em->flush();
                     
@@ -103,7 +103,7 @@ class SecurityController extends Controller
                     ->setBody(
                         $this->renderView(
                             'Blog/Emails/welcome.html.twig',
-                            array('name' => $email)
+                            array('name' => $name)
                         ),
                         'text/html'
                     );
