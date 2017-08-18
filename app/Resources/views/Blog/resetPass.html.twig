@@ -27,10 +27,12 @@
             <div class="panel panel-info">
                 <div class="panel-heading"><b>Recuperación de contraseña</b></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ path('send_email') }}">
-                        <input class="form-control" type="email" name="email" required>
+                    <form action="" method="post"> 
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
                         <br>
                         <button type="submit" class="btn btn-success">Enviar</button>
+                        {{ form_errors(form) }}
                     </form>
                 </div>
             </div>

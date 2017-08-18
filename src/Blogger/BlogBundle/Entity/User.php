@@ -48,7 +48,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(name="is_active", type="boolean")
      */
-    public $isActive;
+    protected $isActive;
 
     public function __construct()
     {

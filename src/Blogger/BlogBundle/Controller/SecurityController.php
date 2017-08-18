@@ -95,7 +95,21 @@ class SecurityController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($user);
                     $em->flush();
+                    
+                    //Enviar mail
+                    $message = (new \Swift_Message('Welcome Email'))
+                    ->setFrom('admin@symfony.com')
+                    ->setTo($name)
+                    ->setBody(
+                        $this->renderView(
+                            'Blog/Emails/welcome.html.twig',
+                            array('name' => $email)
+                        ),
+                        'text/html'
+                    );
 
+                    $this->get('mailer')->send($message);
+                    
                     //generar flasdata
                     $session->getFlashBag()->add('info', '¡Registro realizado con éxito!');
 
@@ -109,7 +123,7 @@ class SecurityController extends Controller
             }
         }
         return $this->render(
-            'blog/registro.html.twig',
+            'Blog/registro.html.twig',
             array('form' => $form->createView())
         );
     }

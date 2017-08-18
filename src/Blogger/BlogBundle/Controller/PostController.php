@@ -29,7 +29,7 @@ class PostController extends Controller
         $query = $qb->getQuery();
         $posts = $query->getResult();
         
-        return $this->render('blog/index.html.twig',array('posts' => $posts));
+        return $this->render('Blog/index.html.twig',array('posts' => $posts));
     }
     
     /**
@@ -51,7 +51,7 @@ class PostController extends Controller
         $query = $qb->getQuery();
         $posts = $query->getResult();
         
-        return $this->render('blog/listaEntrada.html.twig',array('posts' => $posts));
+        return $this->render('Blog/listaEntrada.html.twig',array('posts' => $posts));
     }
     
     /**
@@ -77,7 +77,7 @@ class PostController extends Controller
     }    
     
     /**
-     * @Route("/secure/nuevo/post", name="registro_blog")
+     * @Route("/secure/nuevo/post", name="registro_Blog")
      * @Security("is_granted('ROLE_USER')")
      */    
     
@@ -141,17 +141,17 @@ class PostController extends Controller
                     //generar flasdata
                     $session->getFlashBag()->add('info', '¡Registro realizado con éxito!');
 
-                    return $this->redirectToRoute('registro_blog');
+                    return $this->redirectToRoute('registro_Blog');
 
                 } catch(\Exception $e) {
                     $errorMessage = $e->getMessage();
                     $session->getFlashBag()->add('error', $errorMessage);
-                    return $this->redirect($this->generateUrl('registro_blog'));
+                    return $this->redirect($this->generateUrl('registro_Blog'));
                 }
             }
         }
         return $this->render(
-            'blog/crearEntrada.html.twig',
+            'Blog/crearEntrada.html.twig',
             array('form' => $form->createView())
         );
     }
@@ -233,7 +233,7 @@ class PostController extends Controller
         
         //Renderizar vista
         return $this->render(
-            'blog/editarPost.html.twig',
+            'Blog/editarPost.html.twig',
             array('form' => $form->createView())
         );
     }
