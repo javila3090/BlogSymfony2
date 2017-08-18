@@ -92,7 +92,7 @@ class SecurityController extends Controller
         
             if ($form->isValid()) {
                 try{
-                    $em = $this->getDoctrine()->getManager();
+                    $em = $this->getDoctrine()->getManager();lo
                     $em->persist($user);
                     $em->flush();
                     
